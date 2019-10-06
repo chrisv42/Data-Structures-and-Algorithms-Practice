@@ -1,0 +1,15 @@
+class Solution:
+    def rangeSumBST(self, root: TreeNode, L: int, R: int) -> int:
+        self.calc = 0
+        def recurse(node, L , R):
+            if not node:
+                return
+            if node.val >= L and node.val <= R:
+                self.calc += node.val
+            if node.val > L:
+                recurse(node.left, L, R)
+            if node.val < R:
+                recurse(node.right, L ,R) 
+                
+        recurse(root, L, R)
+        return self.calc
