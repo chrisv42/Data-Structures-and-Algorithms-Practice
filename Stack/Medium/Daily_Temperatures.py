@@ -11,3 +11,5 @@ class Solution:
                 ans[stack[-1]] = point - stack[-1]
                 stack.pop()
         return ans
+    
+# Using stack
